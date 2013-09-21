@@ -1,0 +1,1 @@
+java -Dfile.encoding=UTF-8 -jar download-movie.jar download-movie.properties
