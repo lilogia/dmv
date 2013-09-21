@@ -1,0 +1,19 @@
+http://www.gaki-no-tsukai.com/viewtopic.php?f=13&t=4667
+
+http://www.jdownloader.org/
+
+https://addons.mozilla.org/en-us/firefox/addon/download-youtube/
+
+
+http://www.internetdownloadmanager.com/support/command_line.html
+
+
+Free IP:Port Proxy List
+http://hidemyass.com/proxy-list/
+
+
+mvn archetype:generate -DgroupId=com.lilo.dmv -DartifactId=dmv -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+java -cp target/dmv-1.0-SNAPSHOT.jar com.lilo.dmv.App
+
+java -cp target/dmv-1.0-SNAPSHOT.jar com.lilo.dmv.DownloadMovie /Users/linhhong/Work/eclipse/workspace/DownloadMovie/run/download-movie.properties
