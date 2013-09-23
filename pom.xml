@@ -1,10 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.lilo.dmv</groupId>
   <artifactId>dmv</artifactId>
-  <packaging>jar</packaging>
-  <version>1.0</version>
+  <version>1.0-SNAPSHOT</version>
   <name>dmv</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -15,4 +15,37 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+        	<artifactId>maven-jar-plugin</artifactId>
+        	<configuration>
+          		<archive>
+            		<manifest>
+              			<mainClass>com.lilo.dmv.DownloadMovie</mainClass>
+            		</manifest>
+          		</archive>
+        	</configuration>
+  		</plugin>
+  		<plugin>
+  			<artifactId>maven-assembly-plugin</artifactId>
+  			<version>2.4</version>
+  			<configuration>
+  				<finalName>download-movie</finalName>  				
+				<descriptors>
+  					<descriptor>src/assemble/distribution.xml</descriptor>
+  				</descriptors>  				
+  			</configuration>
+  			<executions>
+  				<execution>
+  					<phase>package</phase>
+  					<goals>
+  						<goal>single</goal>
+  					</goals>
+  				</execution>
+  			</executions>
+  		</plugin>
+  	</plugins>
+  </build>
 </project>
