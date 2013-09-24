@@ -32,7 +32,7 @@
   			<artifactId>maven-assembly-plugin</artifactId>
   			<version>2.4</version>
   			<configuration>
-  				<finalName>download-movie</finalName>  				
+  				<finalName>dm</finalName>  				
 				<descriptors>
   					<descriptor>src/assemble/distribution.xml</descriptor>
   				</descriptors>  				

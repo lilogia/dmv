@@ -2,7 +2,7 @@ package com.lilo.dmv.core;
 
 public class FilmPattern {
 
-	final public static String SEARCH_EPISODE_LINK_PATTERN_TUDOU = "http://www.soku.com/t/nisearch/%s中文版全剧"; // need to be converted to ASCII before requesting
+	final public static String SEARCH_EPISODE_LINK_PATTERN_TUDOU = "http://www.soku.com/t/nisearch/%s"; // need to be converted to ASCII before requesting
 	final public static String EPISODE_LINK_PATTERN_TUDOU = "http://www.tudou.com/albumplay/[0-9A-Za-z\\-_]+/[0-9A-Za-z\\-_]+.html";
 
 	final public static String SEARCH_TO_DOWNLOAD_SITE_FLVCD = "http://www.flvcd.com/"; //FLVCD_SEARCH_PATTERN_PREFIX
