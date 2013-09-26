@@ -1,5 +1,7 @@
 package com.lilo.dmv.core;
 
+import java.io.File;
+
 public class FilmPattern {
 
 	final public static String SEARCH_EPISODE_LINK_PATTERN_TUDOU = "http://www.soku.com/t/nisearch/%s"; // need to be converted to ASCII before requesting
@@ -13,10 +15,11 @@ public class FilmPattern {
 	// http://www.flvcd.com/parse.php?kw=http%3A%2F%2Fv.youku.com%2Fv_show%2Fid_XNTkwNTEyNjUy.html&flag=one&format=super
 
 	final public static String FILE_TO_DOWNLOAD_PATTERN_FLVCD = "http://f.youku.com/player/getFlvPath/sid/00_00/st/flv/fileid/[0-9A-Z\\-]+\\?K=[0-9a-z]+"; //FLVCD_PATTERN
-	final public static String FILENAME_PATTERN = "%1$02d-%2$s_%3$s.flv";	
+	final public static String FILENAME_PATTERN = "%1$03d-%2$s_%3$02d.flv";	
 	final public static String FILENAME_PATTERN_SUFFIX = "%02d";
 	
 	public static String DOWNLOAD_CMD_IDMAN = "IDMan /n /d \"%1$s\" /p %2$s /f %3$s /q ";
+	public static String DOWNLOAD_CMD_WGET = "wget -U firefox -O %2$s" + File.separatorChar + "%3$s %1$s"; 
 	
 	final public static int DRAMA = 1;
 	final public static int MOVIE = 2;

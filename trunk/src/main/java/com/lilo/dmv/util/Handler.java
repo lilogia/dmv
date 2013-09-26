@@ -10,9 +10,10 @@ import com.lilo.dmv.core.FilmPattern;
 
 
 public class Handler {
+	final static String line_separator = System.getProperty("line.separator");
 	
 	public static boolean toRunnableFile(Film film, String outputFile, String savePath, String patternCmd, String partShortName, boolean isUnix) {
-		boolean isSuccess = false;
+		boolean isSuccess = false;		
 		
 		FileWriter out;
 		try {
@@ -26,14 +27,15 @@ public class Handler {
 					}
 				}
 				
-				out.write(Character.LINE_SEPARATOR);
+				out.write(line_separator);
 				if (isUnix) {
 					out.write("# ");
 				} else { //isWindows
 					out.write("REM "); 
 				}				
 				out.write("Episode " + ep.getIndex() + "|| " + ep.getOnlineLink());
-				out.write(Character.LINE_SEPARATOR);
+			
+				out.write(line_separator);
 				
 				List<String> downloadLinks = ep.getDownloadLinks();
 			
@@ -42,7 +44,7 @@ public class Handler {
 					partIndex ++;
 					String partFilename = String.format(FilmPattern.FILENAME_PATTERN, ep.getIndex(), partShortName, partIndex);
 					out.write(String.format(patternCmd, link, savePath, partFilename));
-					out.write(Character.LINE_SEPARATOR);
+					out.write(line_separator);
 				}
 			}
 			out.close();
@@ -63,7 +65,7 @@ public class Handler {
 			List<Episode> episodes = film.getEpisodes();	
 			for (Episode ep : episodes) {												
 				out.write(ep.getOnlineLink());
-				out.write(Character.LINE_SEPARATOR);
+				out.write(line_separator);
 			}
 			out.close();
 			isSuccess = true;
@@ -91,7 +93,7 @@ public class Handler {
 					System.out.println("OK.Done.");
 				}
 				out.write(ep.toString());
-				out.write(Character.LINE_SEPARATOR);
+				out.write(line_separator);
 			}
 			out.close();
 			isSuccess = true;
