@@ -63,7 +63,7 @@ public class DownloadMovie {
 				case 1:					
 					System.out.println("- Create Runnable file ... ");
 					film.reduceEpisodeList(startIndex, endIndex);
-					flag = Handler.toRunnableFile(film, outputFilename, savePath, FilmPattern.DOWNLOAD_CMD_IDMAN, localSaveFile, isUnix);
+					flag = Handler.toRunnableFile(film, outputFilename, savePath, FilmPattern.DOWNLOAD_CMD_WGET, localSaveFile, isUnix);
 					System.out.println("Done.");
 					break;
 				case 2:
