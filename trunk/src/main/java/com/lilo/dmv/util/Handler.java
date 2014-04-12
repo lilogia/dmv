@@ -1,5 +1,6 @@
 package com.lilo.dmv.util;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
@@ -68,7 +69,10 @@ public class Handler {
 				out.write(line_separator);
 			}
 			out.close();
-			isSuccess = true;
+			File thefile = new File(outputFile);
+			if (thefile.exists()) {
+				isSuccess = true;
+			}			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
