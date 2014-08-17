@@ -15,7 +15,7 @@ public class FilmPattern {
 	// http://www.flvcd.com/parse.php?kw=http%3A%2F%2Fv.youku.com%2Fv_show%2Fid_XNTkwNTEyNjUy.html&flag=one&format=super
 
 	final public static String FILE_TO_DOWNLOAD_PATTERN_FLVCD 
-		= "http://k.youku.com/player/getFlvPath/sid/[0-9A-Za-z\\-]+_[0-9]+/st/flv/fileid/[0-9A-Z\\-]+\\?K=[0-9a-zA-Z;?=&]+"; //FLVCD_PATTERN
+		= "http://k.youku.com/player/getFlvPath/sid/[0-9A-Za-z\\-]+_[0-9]+/st/flv/fileid/[0-9A-Z\\-]+\\?K=[0-9a-zA-Z;?=&%]+"; //FLVCD_PATTERN
 		// before 17-Aug-2014 "http://f.youku.com/player/getFlvPath/sid/00_00/st/flv/fileid/[0-9A-Z\\-]+\\?K=[0-9a-z]+"; //FLVCD_PATTERN
 	
 	/* sample at 17-Aug-2014
@@ -27,7 +27,7 @@ public class FilmPattern {
 	final public static String FILENAME_PATTERN_SUFFIX = "%02d";
 	
 	public static String DOWNLOAD_CMD_IDMAN = "IDMan /n /d \"%1$s\" /p %2$s /f %3$s /q ";
-	public static String DOWNLOAD_CMD_WGET = "wget -U firefox -O %2$s" + File.separatorChar + "%3$s %1$s"; 
+	public static String DOWNLOAD_CMD_WGET = "wget -U firefox -O \"%2$s" + File.separatorChar + "%3$s %1$s\""; 
 	
 	final public static int DRAMA = 1;
 	final public static int MOVIE = 2;

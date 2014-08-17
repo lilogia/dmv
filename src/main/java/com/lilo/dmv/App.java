@@ -25,10 +25,11 @@ public class App
     
     public static void testParsing() {
     	String pOrgTxt 
-    	= "http://k.youku.com/player/getFlvPath/sid/540785733914512002d6b_00/st/flv/fileid/0300020600537A2E6F3FE803B99CC8FBE8B76C-BDCB-3997-6ED1-0309E13BC40C?K=e9d57bc7fa65b5b3261dd850&amp;ctype=12&amp;ev=1&amp;oip=1887191773&amp;token=7394&amp;ep=dyaUHUGIUc0D7CLbjT8bZyzgIHFdXP4J9h%2BFg9JkALshS%2B%2FOm0vXsZ7GO%2FdCFYsQe1F1GJ2D3tiVbUZnYYI32hoQ3EehPvrmi4Ti5a1QxJl1ZxpEAcnXx1SZQDn1";
+    	//= "http://k.youku.com/player/getFlvPath/sid/540785733914512002d6b_00/st/flv/fileid/0300020600537A2E6F3FE803B99CC8FBE8B76C-BDCB-3997-6ED1-0309E13BC40C?K=e9d57bc7fa65b5b3261dd850&amp;ctype=12&amp;ev=1&amp;oip=1887191773&amp;token=7394&amp;ep=dyaUHUGIUc0D7CLbjT8bZyzgIHFdXP4J9h%2BFg9JkALshS%2B%2FOm0vXsZ7GO%2FdCFYsQe1F1GJ2D3tiVbUZnYYI32hoQ3EehPvrmi4Ti5a1QxJl1ZxpEAcnXx1SZQDn1";
     	//"http://k.youku.com/player/getFlvPath/sid/540785733914512002d6b_00/st/flv/fileid/0300020600537A2E6F3FE803B99CC8FBE8B76C-BDCB-3997-6ED1-0309E13BC40C?K=e9d57bc7fa65b5b3261dd850&amp;ctype=12&amp;ev=1&amp;oip=1887191773&amp;token=7394&amp;ep=dyaUHUGIUc0D7CLbjT8bZyzgIHFdXP4J9h%2BFg9JkALshS%2B%2FOm0vXsZ7GO%2FdCFYsQe1F1GJ2D3tiVbUZnYYI32hoQ3EehPvrmi4Ti5a1QxJl1ZxpEAcnXx1SZQDn1";
+    	= "http://k.youku.com/player/getFlvPath/sid/1407857361907122d9ac6_00/st/flv/fileid/0300020800530F0A676A6A032DBBC752EA802C-6570-BB55-5E24-07F21402B8C3?K=5312bd311ce5aaf22411e837&ctype=12&ev=1&oip=2043096855&token=5090&ep=cyaUHUGIUc0G5Crfjz8bZXjrJSQJXP4J9h%2BFg9JqALshS%2BjJmU%2FXwJvBSI5CFfttAFB1F%2B7z3qHvakJnYfZGrmgQrTytPPrli%2FLn5a1UspIBYhk0AMWkt1SbQznx";
     	String pPattern 
-    	//= "http://k.youku.com/player/getFlvPath/sid/[0-9A-Za-z\\-]+_00/st/flv/fileid/[0-9A-Z\\-]+\\?K=[0-9a-zA-Z;?=&]+"; //FLVCD_PATTERN
+    	//= "http://k.youku.com/player/getFlvPath/sid/[0-9A-Za-z\\-]+_[0-9]+/st/flv/fileid/[0-9A-Z\\-]+\\?K=[0-9a-zA-Z;?=&%]+"; //FLVCD_PATTERN
     	= FilmPattern.FILE_TO_DOWNLOAD_PATTERN_FLVCD;
     	
     	List<String> list = Parsing.getURLs(pOrgTxt, pPattern);
@@ -44,11 +45,12 @@ public class App
     
     public static void runDownload() {
     	boolean isUnix = true;
-    	String title = "天上女子";
+    	//String title = "天上女子";
+    	String title = "你是谁";
 
 		int type = 1;
 
-		String theName = "angle";
+		String theName = "whoareyou"; //"angle";
 		String savePath = "/Users/linhhong/Downloads/temp";
 		
 		String onlineLinkFilename = savePath + File.separator + theName + "_online.txt";
@@ -57,8 +59,8 @@ public class App
 		
 		int cmd = 1;
 		
-		int startIndex = 94;
-		int endIndex = 94; // 0 = get to the last episode
+		int startIndex = 1;
+		int endIndex = 1; // 0 = get to the last episode
 		
 		try {
 			Film film = new Film(title,type);
