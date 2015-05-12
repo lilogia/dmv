@@ -1,0 +1,1 @@
+automatically collect & create download link from movie website(s)
